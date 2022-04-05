@@ -1,0 +1,15 @@
+# Checks all new commits messages of the branch of the PR
+name: lint-commit-messages
+on: [pull_request]
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git Repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Check Commit Messages
+        uses: wagoid/commitlint-github-action@v4

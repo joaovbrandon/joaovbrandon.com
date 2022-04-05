@@ -1,0 +1,111 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es2020": true
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "jsx-a11y",
+    "react-hooks",
+    "prettier",
+    "import",
+    "import-helpers",
+    "sort-destructure-keys",
+    "better-styled-components"
+  ],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:jsx-a11y/recommended",
+    "plugin:styled-components-a11y/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ],
+
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "react/function-component-definition": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-use-before-define": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".ts", ".tsx"] }
+    ],
+    "import/extensions": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "import/prefer-default-export": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-console": ["error"],
+    "prettier/prettier": "error",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "groups": [
+          "/^react$/",
+          "/^react-dom$/",
+          "/^react/",
+          "/^styled-components$/",
+          "module",
+          "/^@configs/",
+          "/^@components/",
+          "/^@pages/",
+          "/^@assets/",
+          "/^@styles/",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ],
+    "better-styled-components/sort-declarations-alphabetically": ["error"],
+    "sort-destructure-keys/sort-destructure-keys": ["error"],
+    "react/jsx-sort-props": ["error"]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@assets", "./src/assets"],
+          ["@components", "./src/components"],
+          ["@configs", "./src/configs"],
+          ["@pages", "./src/pages"],
+          ["@styles", "./src/styles"]
+        ],
+        "extensions": [".ts", ".tsx"]
+      }
+    }
+  }
+}
