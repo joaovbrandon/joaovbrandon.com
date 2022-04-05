@@ -81,6 +81,12 @@ export default class MyDocument extends Document {
           <link href="/manifest.json" rel="manifest" />
           <meta content="#ffffff" name="msapplication-TileColor" />
           <meta content="#ffffff" name="theme-color" />
+          <link
+            key="fonts-be-vietnam-pro"
+            href="/fonts/be-vietnam-pro.css"
+            rel="stylesheet"
+            type="text/css"
+          />
         </Head>
         <body>
           <Main />
