@@ -1,7 +1,13 @@
 import type { NextPage } from 'next';
+import AppHead from '@components/AppHead';
 
 const Home: NextPage = () => {
-  return <h1>joaovbrandon.com</h1>;
+  return (
+    <>
+      <AppHead />
+      <h1>Hello, you can call me Brandon!</h1>
+    </>
+  );
 };
 
 export default Home;
