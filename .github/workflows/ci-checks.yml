@@ -1,0 +1,36 @@
+# Runs Prettier, ESLint, TypeScript and Build to check for errors
+name: ci-checks
+on: [pull_request]
+
+jobs:
+  ci-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '16.14.2'
+
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install Packages
+        run: yarn install
+
+      - name: Check Prettier
+        run: yarn prettier
+
+      - name: Check ESLint
+        run: yarn lint
+
+      - name: Check Types
+        run: yarn tsc
+
+      - name: Check Build
+        run: yarn build
