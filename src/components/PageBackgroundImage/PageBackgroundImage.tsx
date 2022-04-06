@@ -1,10 +1,10 @@
 import * as S from './PageBackgroundImage.styles';
 import { PageBackgroundImageProps } from './PageBackgroundImage.types';
 
-const PageBackgroundImage = ({ image }: PageBackgroundImageProps) => (
+const PageBackgroundImage = (props: PageBackgroundImageProps) => (
   <>
-    <S.BackgroundImage image={image} />
-    <S.BackgroundOverlay />
+    <S.BackgroundImage {...props} />
+    <S.BackgroundOverlay {...props} />
   </>
 );
 

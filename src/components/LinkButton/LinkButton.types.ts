@@ -7,4 +7,13 @@ export interface LinkButtonProps {
   label: string;
   openInNewTab?: boolean;
   internal?: boolean;
+  small?: boolean;
+  noBorder?: boolean;
+  transformHover?: boolean;
+}
+
+export interface StyledLinkButtonProps {
+  small?: boolean;
+  noBorder?: boolean;
+  transformHover?: boolean;
 }

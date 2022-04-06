@@ -9,8 +9,11 @@ const LinkButton = ({
   icon: Icon,
   internal = false,
   label,
+  noBorder,
   onClick,
   openInNewTab = false,
+  small,
+  transformHover,
 }: LinkButtonProps) => {
   const LinkWrapper = useCallback(
     children => (
@@ -26,9 +29,12 @@ const LinkButton = ({
       <S.LinkButton
         draggable="false"
         href={onClick ? undefined : href}
+        noBorder={noBorder}
         onClick={onClick}
         rel="noreferrer"
+        small={small}
         target={openInNewTab ? '_blank' : '_self'}
+        transformHover={transformHover}
       >
         {Icon}
         {label}
