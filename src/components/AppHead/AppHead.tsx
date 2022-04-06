@@ -5,7 +5,7 @@ const DEFAULT_URL = 'https://joaovbrandon.com';
 const DEFAULT_TITLE = 'Brandon @joaovbrandon';
 const DEFAULT_DESCRIPTION =
   '🇧🇷 Senior Front-end Engineer, Digital Designer & Problem Solver.';
-const DEFAULT_IMAGE = '/brandon.jpg';
+const DEFAULT_IMAGE = 'https://joaovbrandon.com/brandon.jpg';
 const DEFAULT_IMAGE_WIDTH = '1280';
 const DEFAULT_IMAGE_HEIGHT = '640';
 const DEFAULT_IMAGE_ALT =
