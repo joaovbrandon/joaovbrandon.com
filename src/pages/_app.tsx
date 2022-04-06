@@ -1,3 +1,4 @@
+import '@configs/setup';
 import { AppProps } from 'next/app';
 import { GlobalStyle } from '@styles';
 
