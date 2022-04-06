@@ -5,8 +5,9 @@ const Reset = createGlobalStyle`
   body {
     height: 100%;
     background-color: white;
-    color: black;
+    color: white;
     font-family: 'Be Vietnam Pro';
+    background-color: black;
   }
 
   html {
