@@ -1,26 +1,21 @@
+import { useTranslation } from 'next-export-i18n';
 import Head from 'next/head';
 import { AppHeadProps } from './AppHead.types';
 
-const DEFAULT_URL = 'https://joaovbrandon.com';
-const DEFAULT_TITLE = 'Brandon @joaovbrandon';
-const DEFAULT_DESCRIPTION =
-  '🇧🇷 Senior Front-end Engineer, Digital Designer & Problem Solver.';
-const DEFAULT_IMAGE = 'https://joaovbrandon.com/brandon.jpg';
-const DEFAULT_IMAGE_WIDTH = '1280';
-const DEFAULT_IMAGE_HEIGHT = '640';
-const DEFAULT_IMAGE_ALT =
-  'Logo with "Brandon" written in white with dark background.';
-
 const AppHead = ({
-  description = DEFAULT_DESCRIPTION,
-  image = DEFAULT_IMAGE,
-  imageWidth = DEFAULT_IMAGE_WIDTH,
-  imageHeight = DEFAULT_IMAGE_HEIGHT,
-  imageAlt = DEFAULT_IMAGE_ALT,
+  description = '🇧🇷 Senior Front-end Engineer, Digital Designer & Problem Solver.',
+  imageAlt = 'Logo with "Brandon" written in white with dark background.',
+  imageHeight = '640',
+  imageUrl = 'https://joaovbrandon.com/brandon.jpg',
+  imageWidth = '1280',
   title,
-  url = DEFAULT_URL,
+  url = 'https://joaovbrandon.com',
 }: AppHeadProps) => {
-  const pageTitle = title ? `${title} | ${DEFAULT_TITLE}` : DEFAULT_TITLE;
+  const { t } = useTranslation();
+
+  const pageTitle = title
+    ? `${title} | ${t('Brandon @joaovbrandon')}`
+    : t('Brandon @joaovbrandon');
 
   return (
     <Head>
@@ -29,8 +24,8 @@ const AppHead = ({
       <meta content={pageTitle} property="og:site_name" />
       <meta content={description} name="description" />
       <meta content={description} property="og:description" />
-      <meta content={image} name="image" />
-      <meta content={image} property="og:image" />
+      <meta content={imageUrl} name="image" />
+      <meta content={imageUrl} property="og:image" />
       <meta content={imageWidth} property="og:image:width" />
       <meta content={imageHeight} property="og:image:height" />
       <meta content={imageAlt} property="og:image:alt" />
