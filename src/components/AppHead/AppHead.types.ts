@@ -3,4 +3,7 @@ export interface AppHeadProps {
   description?: string;
   url?: string;
   image?: string;
+  imageWidth?: string;
+  imageHeight?: string;
+  imageAlt?: string;
 }
