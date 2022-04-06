@@ -1,13 +1,60 @@
+import { BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
+import { FiMail } from 'react-icons/fi';
+import { GrLinkedinOption } from 'react-icons/gr';
 import type { NextPage } from 'next';
-import AppHead from '@components/AppHead';
+import { AppHead, Avatar, Logo, LinkButton, Footer } from '@components';
+import { CenterPageWrapper } from '@styles/commons';
 
-const Home: NextPage = () => {
-  return (
-    <>
-      <AppHead />
-      <h1>Hello, you can call me Brandon!</h1>
-    </>
-  );
-};
+const LINKS = [
+  {
+    icon: GrLinkedinOption,
+    href: 'https://www.linkedin.com/in/joaovbrandon',
+    label: 'LinkedIn',
+    openInNewTab: true,
+  },
+  {
+    icon: BsGithub,
+    href: 'https://github.com/joaovbrandon',
+    label: 'GitHub',
+    openInNewTab: true,
+  },
+  {
+    icon: BsInstagram,
+    href: 'https://www.instagram.com/joaovbrandon',
+    label: 'Instagram',
+    openInNewTab: true,
+  },
+  {
+    icon: BsTwitter,
+    href: 'https://twitter.com/joaovbrandon',
+    label: 'Twitter',
+    openInNewTab: true,
+  },
+  {
+    icon: FiMail,
+    href: 'mailto:hello@joaovbrandon.com',
+    label: 'Email',
+  },
+];
 
-export default Home;
+const HomePage: NextPage = () => (
+  <>
+    <AppHead />
+    <CenterPageWrapper>
+      <Avatar />
+      <Logo />
+      {LINKS.map(({ href, icon: Icon, label, openInNewTab }) => (
+        <LinkButton
+          key={label}
+          href={href}
+          icon={<Icon />}
+          label={label}
+          openInNewTab={openInNewTab}
+        />
+      ))}
+      <Footer />
+    </CenterPageWrapper>
+  </>
+);
+
+export default HomePage;
