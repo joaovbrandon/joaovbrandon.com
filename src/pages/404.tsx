@@ -1,7 +1,9 @@
 import type { NextPage } from 'next';
+import { useTranslation } from 'next-export-i18n';
 import {
   AppHead,
   PageBackgroundImage,
+  LanguageSwitcher,
   Avatar,
   Logo,
   Footer,
@@ -9,19 +11,24 @@ import {
 } from '@components';
 import { CenterPageWrapper } from '@styles/commons';
 
-const NotFoundPage: NextPage = () => (
-  <>
-    <AppHead title="Page Not Found" />
-    <PageBackgroundImage image="/images/page-not-found-background.webp" />
-    <CenterPageWrapper>
-      <Avatar />
-      <Logo />
-      <h1>Looks like you are lost</h1>
-      <h2>There&apos;s nothing here</h2>
-      <LinkButton href="/" internal label="Go Back Home" />
-      <Footer />
-    </CenterPageWrapper>
-  </>
-);
+const NotFoundPage: NextPage = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <AppHead title={t('Page Not Found')} />
+      <PageBackgroundImage image="/images/page-not-found-background.webp" />
+      <CenterPageWrapper>
+        <LanguageSwitcher />
+        <Avatar />
+        <Logo />
+        <h1>{t('NOT_FOUND_PAGE_TITLE')}</h1>
+        <h2>{t('NOT_FOUND_PAGE_MESSAGE')}</h2>
+        <LinkButton href="/" internal label={t('GENERIC_GO_BACK_HOME')} />
+        <Footer />
+      </CenterPageWrapper>
+    </>
+  );
+};
 
 export default NotFoundPage;

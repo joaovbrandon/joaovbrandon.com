@@ -2,7 +2,7 @@ export interface AppHeadProps {
   title?: string;
   description?: string;
   url?: string;
-  image?: string;
+  imageUrl?: string;
   imageWidth?: string;
   imageHeight?: string;
   imageAlt?: string;
