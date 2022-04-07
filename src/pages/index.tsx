@@ -21,25 +21,38 @@ import { CenterPageWrapper } from '@styles/commons';
 const HomePage: NextPage = () => {
   const { t } = useTranslation();
 
-  const [backgroundImage, setBackgroundImage] = useState('');
+  const [bg, setBg] = useState('');
+  const [showedBgsList, setShowedBgsList] = useState<string[]>([]);
 
-  const refreshBackground = useCallback(() => {
-    const newBackground =
-      HOME_PAGE_BGS_LIST[random(0, HOME_PAGE_BGS_LIST.length - 1)];
+  const refreshBg = useCallback(() => {
+    const bgsList = HOME_PAGE_BGS_LIST.filter(
+      img => !showedBgsList.includes(img)
+    );
 
-    if (newBackground === backgroundImage) {
-      refreshBackground();
+    const newBg = bgsList[random(0, bgsList.length - 1)];
+
+    if (newBg === bg) {
+      refreshBg();
       return;
     }
 
-    setBackgroundImage(newBackground);
-  }, [backgroundImage]);
+    setBg(newBg);
+    setShowedBgsList(list => [...list, newBg]);
+  }, [bg, showedBgsList]);
 
   useEffect(() => {
-    setBackgroundImage(
-      HOME_PAGE_BGS_LIST[random(0, HOME_PAGE_BGS_LIST.length - 1)]
-    );
+    const firstBg =
+      HOME_PAGE_BGS_LIST[random(0, HOME_PAGE_BGS_LIST.length - 1)];
+
+    setBg(firstBg);
+    setShowedBgsList([firstBg]);
   }, []);
+
+  useEffect(() => {
+    if (showedBgsList.length === HOME_PAGE_BGS_LIST.length) {
+      setShowedBgsList([showedBgsList[showedBgsList.length - 1]]);
+    }
+  }, [showedBgsList]);
 
   const LINKS = useMemo(
     () => [
@@ -79,7 +92,7 @@ const HomePage: NextPage = () => {
   return (
     <>
       <AppHead />
-      <PageBackgroundImage image={backgroundImage} overlayOpacity="0.6" />
+      <PageBackgroundImage image={bg} overlayOpacity="0.6" />
       <CenterPageWrapper>
         <LanguageSwitcher />
         <Avatar />
@@ -88,7 +101,7 @@ const HomePage: NextPage = () => {
           icon={<ImMagicWand />}
           label={t('HOME_PAGE_CHANGE_BACKGROUND_BUTTON')}
           noBorder
-          onClick={refreshBackground}
+          onClick={refreshBg}
           small
           transformHover
         />
