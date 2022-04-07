@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-export-i18n';
+import { useTranslation, useLanguageQuery } from 'next-export-i18n';
 import Image from 'next/image';
 import Link from 'next/link';
 import * as S from './Logo.styles';
@@ -6,9 +6,10 @@ import { LogoProps } from './Logo.types';
 
 const Logo = ({ href = '/', size = 160 }: LogoProps) => {
   const { t } = useTranslation();
+  const [query] = useLanguageQuery();
 
   return (
-    <Link href={href} passHref>
+    <Link href={{ pathname: href, query }} passHref>
       <a draggable="false">
         <S.LogoWrapper size={size}>
           <Image

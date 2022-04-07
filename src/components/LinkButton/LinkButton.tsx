@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { useLanguageQuery } from 'next-export-i18n';
 import Link from 'next/link';
 import ConditionalWrapper from '@components/ConditionalWrapper';
 import * as S from './LinkButton.styles';
@@ -15,13 +16,15 @@ const LinkButton = ({
   small,
   transformHover,
 }: LinkButtonProps) => {
+  const [query] = useLanguageQuery();
+
   const LinkWrapper = useCallback(
     children => (
-      <Link href={href} passHref>
+      <Link href={{ pathname: href, query }} passHref>
         {children}
       </Link>
     ),
-    [href]
+    [href, query]
   );
 
   return (
