@@ -13,6 +13,7 @@ export const LinkButton = styled.a<StyledLinkButtonProps>`
   max-width: 100%;
   padding: 10px;
   transition: all 0.4s;
+  user-select: none;
   width: 350px;
 
   ${({ small }) =>
