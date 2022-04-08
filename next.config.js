@@ -8,6 +8,7 @@ const nextConfig = {
   images: {
     loader: 'akamai',
     path: '',
+    formats: ['image/avif', 'image/webp'],
   },
 };
 

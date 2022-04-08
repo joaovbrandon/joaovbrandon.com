@@ -117,9 +117,9 @@ export default class MyDocument extends Document {
           <meta content="#ffffff" name="theme-color" />
           <link
             key="fonts-be-vietnam-pro"
+            as="font"
             href="/fonts/be-vietnam-pro.css"
-            rel="stylesheet"
-            type="text/css"
+            rel="preload"
           />
         </Head>
         <body>

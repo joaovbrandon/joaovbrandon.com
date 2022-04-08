@@ -13,6 +13,7 @@ const Avatar = ({ size = 150 }: AvatarProps) => {
         blurDataURL="/images/brandon-avatar.jpg"
         draggable="false"
         height={size}
+        layout="fixed"
         placeholder="blur"
         src="/images/brandon-avatar.jpg"
         width={size}
