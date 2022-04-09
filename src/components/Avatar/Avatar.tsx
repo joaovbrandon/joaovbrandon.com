@@ -15,7 +15,7 @@ const Avatar = ({ size = 150 }: AvatarProps) => {
         height={size}
         layout="fixed"
         placeholder="blur"
-        src="/images/brandon-avatar.jpg"
+        src="//images/brandon-avatar.jpg"
         width={size}
       />
     </S.AvatarWrapper>

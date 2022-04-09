@@ -18,7 +18,7 @@ const Logo = ({ href = '/', size = 160 }: LogoProps) => {
             height={158}
             layout="intrinsic"
             priority
-            src="/images/brandon-logo-light.png"
+            src="//images/brandon-logo-light.png"
             width={897}
           />
         </S.LogoWrapper>
