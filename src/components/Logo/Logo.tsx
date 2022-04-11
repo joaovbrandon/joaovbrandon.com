@@ -15,11 +15,11 @@ const Logo = ({ href = '/', size = 160 }: LogoProps) => {
           <Image
             alt={t('BRANDON_LOGO_DESCRIPTION')}
             draggable="false"
-            height={158}
+            height={28}
             layout="intrinsic"
             priority
-            src="//images/brandon-logo-light.png"
-            width={897}
+            src="//images/brandon-logo-light.svg"
+            width={160}
           />
         </S.LogoWrapper>
       </a>
