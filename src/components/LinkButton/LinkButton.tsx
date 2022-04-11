@@ -30,6 +30,7 @@ const LinkButton = ({
   return (
     <ConditionalWrapper condition={internal && !onClick} wrapper={LinkWrapper}>
       <S.LinkButton
+        as={onClick ? 'button' : undefined}
         draggable="false"
         href={onClick ? undefined : href}
         noBorder={noBorder}
