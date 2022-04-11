@@ -3,10 +3,12 @@ import { StyledLinkButtonProps } from './LinkButton.types';
 
 export const LinkButton = styled.a<StyledLinkButtonProps>`
   align-items: center;
+  background: transparent;
   border: 2px solid white;
   color: white;
   cursor: pointer;
   display: flex;
+  font-size: 1em;
   gap: 5px;
   justify-content: center;
   margin: 10px;

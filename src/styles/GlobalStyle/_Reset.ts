@@ -20,6 +20,7 @@ const Reset = createGlobalStyle`
     padding: 0;
     outline: 0;
     box-sizing: inherit;
+    font-family: 'Be Vietnam Pro';
     -webkit-tap-highlight-color: transparent !important;
     -webkit-touch-callout: none !important;
 
