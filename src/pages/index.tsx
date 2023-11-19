@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useMemo } from 'react';
-import { BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
+import { BsGithub, BsInstagram, BsTwitterX } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
 import { GrLinkedinOption } from 'react-icons/gr';
 import { ImMagicWand } from 'react-icons/im';
@@ -75,8 +75,8 @@ const HomePage: NextPage = () => {
         openInNewTab: true,
       },
       {
-        icon: BsTwitter,
-        href: 'https://twitter.com/joaovbrandon',
+        icon: BsTwitterX,
+        href: 'https://x.com/joaovbrandon',
         label: 'Twitter',
         openInNewTab: true,
       },
