@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { AppHeadProps } from './AppHead.types';
 
 const AppHead = ({
-  description = '🇧🇷 Senior Front-end Engineer, Digital Designer & Problem Solver.',
+  description = '🇧🇷 Senior Software Engineer, Digital Designer & Problem Solver.',
   imageAlt = 'Logo with "Brandon" written in white with dark background.',
   imageHeight = '640',
   imageUrl = 'https://joaovbrandon.com/brandon.jpg',
